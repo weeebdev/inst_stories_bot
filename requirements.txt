@@ -1,0 +1,4 @@
+python-telegram-bot==20.5
+instagrapi==1.16.39
+python-dotenv==1.0.0
+sqlite3==2.6.0

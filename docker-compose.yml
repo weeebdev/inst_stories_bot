@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  instagram-bot:
+    build: .
+    container_name: instagram-story-bot
+    restart: unless-stopped
+    volumes:
+      - ./downloads:/app/downloads  # For persistent storage of DB and session
+      - ./session.json:/app/session.json
+    env_file:
+      - .env
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHANNEL_ID=${TELEGRAM_CHANNEL_ID}
+      - INSTAGRAM_USERNAME=${INSTAGRAM_USERNAME}
+      - INSTAGRAM_PASSWORD=${INSTAGRAM_PASSWORD}
+      - TARGET_USERS=${TARGET_USERS}
+
+

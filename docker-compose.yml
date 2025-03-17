@@ -6,8 +6,7 @@ services:
     container_name: instagram-story-bot
     restart: unless-stopped
     volumes:
-      - ./downloads:/app/downloads  # For persistent storage of DB and session
-      - ./session.json:/app/session.json
+      - ./data:/app/data  # For persistent storage of DB and session
     env_file:
       - .env
     environment:

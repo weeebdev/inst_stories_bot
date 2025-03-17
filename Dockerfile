@@ -15,12 +15,13 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Create data directory for persistent storage
-RUN mkdir -p /app/downloads
+RUN mkdir -p /app/data
+RUN mkdir -p /app/data/downloads
 
 # Environment variables
 ENV PYTHONUNBUFFERED=1
 
 # Volumes for persistent data
-VOLUME /app/downloads
+VOLUME /app/data
 
 CMD ["python", "main.py"]
